@@ -1,18 +1,18 @@
 <% include header %>
-<% if (entries.length) { %>
-  <% entries.forEach(function(entry) { %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="text-muted pull-right">
-          <%= entry.published %>
+  <% if (entries.length) { %>
+    <% entries.forEach(function(entry) { %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="text-muted pull-right">
+            <%= entry.published %>
+          </div>
+          <%= entry.title %>
         </div>
-        <%= entry.title %>
+        <div class="panel-body">
+          <%= entry.body %>
+        </div>
       </div>
-      <div class="panel-body">
-        <%= entry.body %>
-      </div>
-    </div>
-  <% }) %>
-<% } else { %>   No entries! <a href="/new-entry">Add one!</a>
-<% } %>
-<% include footer %>
+      <% }) %>
+        <% } else { %> 보고 있는 당신, 어서 글을 남겨주세요! <a href="/new-entry">글 남기기</a>
+          <% } %>
+            <% include footer %>
